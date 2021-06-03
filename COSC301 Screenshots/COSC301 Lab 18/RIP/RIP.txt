@@ -1,0 +1,15 @@
+Why are some routes missing in the advertisements?
+eth0.20 shows packets received on that network
+
+poison reverse?
+packets received include information from the router it was sent to.
+ 
+fail-over and fail-back times? 
+1 second and 7 seconds respectively
+
+how long does fail-back take with adaptor 2 cutoff?
+8 seconds
+192.168.2.0 192.168.1.1 are removed
+
+When you see R2’s reaction, quit the monitor and observe the routing table again. What changed?
+192.168.3.2 is used instead of 192.168.1.1 to get to 192.168.4.0, where reroute took a few seconds for delete and failover

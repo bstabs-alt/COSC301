@@ -1,0 +1,20 @@
+Assessment
+
+1. What address ranges do you expect to ping when the VPN is connected? What subnets can you actually reach? Is this different from what you expected? Why or why not?
+
+Can ping 10.8.0.0/24 and the outside interface 10.0.2.15.
+Can ping tun0 (open VPN) and outside but not inside.
+This is expected because there is not configuration to connect to the inside.
+
+
+2. Examine the routing table on the client before and after connecting to the VPN. What new routes are added? What do you notice about the metrics? Why do you suppose this is?
+
+New router is tun0 adds 10.8.0.1 with gateway 10.8.0.9.
+This is the ip for tun0 which is the VPN.
+
+3. Run sudo tcpdump -i enp0s3 on Remote. This examines the traffic on the ethernet interface and emulates someone performing a man-in-the-middle (MITM) attack. Run the following two commands on Server1 to ping Remote, and compare and contrast the tcpdump output.
+• ping -c 1 10.8.0.6
+• ping -c 1 10.0.2.4
+What implications does this hold for (free) public VPN servers?
+
+The outputs both go through the outside interface.

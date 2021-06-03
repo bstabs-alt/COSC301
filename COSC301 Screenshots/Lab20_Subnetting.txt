@@ -1,0 +1,32 @@
+Lab20 subnetting
+
+1. Which subnet does host 192.168.77.108/28 belong to?
+	192.168.77.108 	11000000 10101000 01001101 01101100
+	255.255.255.240	11111111 11111111 11111111 11110000
+			-----------------------------------
+	192.168.77.96	11000000 10101000 01001101 01100000
+
+
+2. What valid host range is the IP address 172.21.71.219/20 a part of?
+	172.21.64.1 - 172.21.79.254
+
+3. What is the first valid host on the subnetwork that the node 172.16.139.35/26 belongs to?
+	172.16.139.1 
+
+4. What is the broadcast address of the network 172.30.134.0/23?
+	172.30.135.255
+
+5. How many subnets and hosts can you get from the network 172.20.0.0 if you want to partition it into subnets like 172.20.0.0/255.255.254.0?
+	172.20.0.0    10101100 00010100 00000000 00000000
+	255.255.254.0 00000000 01111111 11111111 11111111
+		      -----------------------------------
+	0.20.0.0      00000000 00010100 00000000 00000000
+	2^(32-23) - 2 = 512 - 2
+	= /23 which is 512 hosts, therefore 510 available hosts.
+	
+
+Sometimes you need to know the class of an address, for example, to answer a question such as this one. The class of an address, and therefore its network mask, can be determined by the first few bits of the address, as shown below.
+
+6. Given the following address allocations, create two further allocations, a /29 (“Test Network”) and a /27 (“Sensor Network”), such that fragmentation of the address space is minimised. The “Test Network” can be a subnet of the Engineering subnet.
+	172.16.20.1/27	Test Network
+	172.16.20.32/29	Sensor Network
